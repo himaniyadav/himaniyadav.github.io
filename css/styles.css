@@ -1,0 +1,233 @@
+.container {
+  display: grid;
+  grid-template-rows: 75px 600px 300px auto 300px;
+  grid-template-columns: auto 300px;
+  grid-template-areas:
+    "header  header"
+    "intro   aside"
+    "about   about"
+    "main    main"
+    "footer  footer";
+}
+
+@media (max-width: 900) and (min-width: 600px) {
+    .container {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 70% 30%;
+        grid-template-areas:
+            "header header"
+            "intro  aside"
+            "about  about"
+            "main   main"
+            "footer footer";
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 100%;
+        grid-template-areas:
+            "intro"
+            "aside"
+            "about"
+            "main"
+            "footer";
+    }
+}
+
+/* faking a css reset because I don't 
+   actually know how to do that */
+html, body { margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+img { max-width: 100%; }
+
+/* Styling different headings and paragraph text */
+h1 { 
+    font-family: "Playfair Display Bold", "Playfair Display";
+    font-size: 90px; 
+    font-style: bold;
+    font-weight: 700; 
+    line-height: 26.4px; 
+} 
+h2 {
+    font-family: "Playfair Display"; 
+    font-size: 24px;  
+    font-weight: 400;
+    font-variant: normal;  
+    line-height: 23px; 
+}
+h3 { 
+    font-family: "Montserrat"; 
+    font-size: 24px; 
+    font-style: normal; 
+    font-variant: small-caps; 
+    font-weight: 400;  
+}
+
+p {
+    font-family: "Montserrat"; 
+    font-size: 14px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 400; 
+}
+
+/* Styling the header and nav bar */
+.header { 
+    background-color: #5569DC;
+    color: white;
+    grid-area: header;
+}
+
+nav {
+    margin-left: 150px;
+    margin-top: 10px;
+}
+/* Style the links inside the navigation bar */
+nav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: "Playfair Display"; 
+    font-style: italic; 
+    font-weight: 300; 
+}
+/* Change the color of links on hover */
+nav a:hover {
+    color: rgb(173, 162, 236);
+}
+/* Add a color to the active/current link */
+nav a.active {
+    background-color: rgba(193, 186, 235, 0.664);
+    color: white;
+}
+
+/* Style the side bar */
+.aside { 
+    background-color: #5569DC;
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+    grid-area: aside; 
+}
+.aside h2{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+@media (max-width: 600px) {
+    .aside h2 {
+        font-size: 0;
+    }
+}
+.aside a {
+    float: left;
+    color: #5569dc;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 300; 
+    font-family: "Montserrat"; 
+}
+.button {
+    background-color: white; /* Green */
+    border: none;
+    color: #5569DC;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Style the footer */
+.footer {
+    background-color: #5569DC;
+    color: white;
+    padding-left: 150px;
+    padding-right: 150px; 
+    grid-area: footer; 
+}
+.footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: "Playfair Display"; 
+    font-style: italic; 
+    font-weight: 300; 
+}
+.footer a:hover {
+    color: rgb(173, 162, 236);
+}
+
+/* Styling the introduction section */
+.intro { 
+    background: url(../images/background.png) no-repeat center bottom;
+    color: white;
+    grid-area: intro; 
+    padding-left: 100px;
+    padding-top: 200px;
+}
+.intro h2 {
+    font-style: italic;
+}
+.intro h3 {
+    font-size: 30px;
+}
+
+@media (max-width: 800px) {
+    .intro {
+        text-align: center;
+        padding-left: 0;
+    }
+    .intro h1 {
+        font-size: 30px;
+    }
+    .intro h2 {
+        font-size: 18px;
+        font-style: italic;
+    }
+    .intro h3 {
+        font-size: 15px;
+    }
+}
+
+/* Styling the about me section */
+.about {
+    background-color: rgb(205, 216, 236);
+    padding-left: 150px;
+    padding-right: 150px;
+    grid-area: about;
+}
+.about h2 {
+    color: #5569DC;
+    font-style: italic;
+    font-size: 30px;
+}
+.about h3 {
+    color: #5569DC;
+    font-size: 24px;
+}
+
+/* Style the body */
+.main { 
+    padding-left: 150px;
+    padding-right: 150px;
+    grid-area: main; 
+}
+.main h2 {
+    color: #5569DC;
+    font-style: italic;
+    font-size: 30px;
+}
+.main h3 {
+    color: #5569DC;
+    font-size: 24px;
+}
