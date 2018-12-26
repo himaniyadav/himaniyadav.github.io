@@ -229,5 +229,18 @@ nav a.active {
 }
 .main h3 {
     color: #5569DC;
-    font-size: 24px;
+    font-size: 20px;
+}
+table {
+    width: 100%;
+    color: #131313;
+    font-family: "Montserrat";
+    font-size: 14px;
+    font-weight: 400px;
+}
+table td:nth-child(1) {
+    width: 10%;
+}
+td {
+    padding: 10px;
 }
