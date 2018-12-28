@@ -1,10 +1,10 @@
 .container {
   display: grid;
   grid-template-rows: 75px 600px 300px auto 300px;
-  grid-template-columns: auto 300px;
+  grid-template-columns: 300px auto;
   grid-template-areas:
     "header  header"
-    "intro   aside"
+    "aside   intro"
     "about   about"
     "main    main"
     "footer  footer";
@@ -14,10 +14,10 @@
     .container {
         display: grid;
         grid-template-rows: auto;
-        grid-template-columns: 70% 30%;
+        grid-template-columns: 30% 70%;
         grid-template-areas:
             "header header"
-            "intro  aside"
+            "aside  intro"
             "about  about"
             "main   main"
             "footer footer";
@@ -30,13 +30,35 @@
         grid-template-rows: auto;
         grid-template-columns: 100%;
         grid-template-areas:
+            "header"
             "intro"
             "aside"
             "about"
             "main"
             "footer";
     }
+    nav a {
+        visibility: hidden;
+        display: none;
+        padding-top: 50px;
+    }
 }
+
+.row {
+    display: flex;
+}
+  
+.column {
+    flex: 50%;
+}
+  
+/* Makes columns stack on top of each other in mobile view */
+@media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+    }
+}
+  
 
 /* faking a css reset because I don't 
    actually know how to do that */
@@ -46,6 +68,16 @@ html { scroll-behavior: smooth; }
 
 img { max-width: 100%; }
 
+::-moz-selection { /* Code for Firefox */
+    color: rgb(80, 80, 80);
+    background: rgb(106, 236, 187);
+}
+  
+::selection {
+    color: rgb(80, 80, 80); 
+    background: rgb(106, 236, 187);
+}
+  
 /* Styling different headings and paragraph text */
 h1 { 
     font-family: "Playfair Display Bold", "Playfair Display";
@@ -67,14 +99,24 @@ h3 {
     font-style: normal; 
     font-variant: small-caps; 
     font-weight: 400;  
+    margin: 0px;
 }
 
 p {
     font-family: "Montserrat"; 
-    font-size: 14px; 
+    font-size: 15px; 
     font-style: normal; 
     font-variant: normal; 
     font-weight: 400; 
+}
+
+ul {
+    font-family: "Montserrat"; 
+    font-size: 16px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 400; 
+    list-style-type: none;
 }
 
 /* Styling the header and nav bar */
@@ -85,7 +127,7 @@ p {
 }
 
 nav {
-    margin-left: 150px;
+    margin-left: 350px;
     margin-top: 10px;
 }
 /* Style the links inside the navigation bar */
@@ -128,6 +170,9 @@ nav a.active {
         font-size: 0;
     }
 }
+.aside p { 
+    font-size: 14px;
+}
 
 .button {
     background-color: white;
@@ -167,6 +212,7 @@ nav a.active {
     color: white;
     padding-left: 150px;
     padding-right: 150px; 
+    padding-top: 15px;
     grid-area: footer; 
 }
 .footer a {
@@ -187,6 +233,22 @@ nav a.active {
     font-size: 25px; 
     font-family: "FontAwesome"; 
     font-style: normal;
+    padding-bottom: 10px;
+}
+.footer .button {
+    background-color: white;
+    border: none;
+    color: #5569DC;
+    padding: 13px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+@media (max-width: 800px) {
+    .footer {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
 }
 
 /* Styling the introduction section */
@@ -194,8 +256,9 @@ nav a.active {
     background: url(../images/background.png) no-repeat center bottom;
     color: white;
     grid-area: intro; 
-    padding-left: 100px;
+    padding-right: 150px;
     padding-top: 200px;
+    text-align: right;
 }
 .intro h2 {
     font-style: italic;
@@ -223,10 +286,13 @@ nav a.active {
 
 /* Styling the about me section */
 .about {
+    color: hsl(240, 3%, 14%);
     background-color: rgb(205, 216, 236);
-    padding-left: 150px;
+    padding-left: 300px;
     padding-right: 150px;
+    padding-top: 30px;
     grid-area: about;
+    vertical-align: middle;
 }
 .about h2 {
     color: #5569DC;
@@ -242,12 +308,15 @@ nav a.active {
         padding-left: 100px;
         padding-right: 100px;
         padding-top: 30px;
+        padding-bottom: 30px;
     }
 }
 @media (max-width: 600px) {
     .about {
         padding-left: 50px;
         padding-right: 50px;
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
 }
 
@@ -255,7 +324,10 @@ nav a.active {
 .main { 
     padding-left: 150px;
     padding-right: 150px;
+    padding-top: 30px;
+    padding-bottom: 50px;
     grid-area: main; 
+    color: hsl(240, 3%, 14%);
 }
 .main h2 {
     color: #5569DC;
@@ -264,7 +336,7 @@ nav a.active {
 }
 .main h3 {
     color: #5569DC;
-    font-size: 20px;
+    font-size: 22px;
 }
 @media (max-width: 800px) {
     .main {
@@ -277,6 +349,12 @@ nav a.active {
         padding-left: 50px;
         padding-right: 50px;
     }
+}
+
+.main #activities ul {
+    font-size: 12px;
+    font-style: italic;
+    padding:0;
 }
 
 table {
