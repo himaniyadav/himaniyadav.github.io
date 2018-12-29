@@ -253,7 +253,11 @@ nav a.active {
 
 /* Styling the introduction section */
 .intro { 
-    background: url(../images/background.png) no-repeat center bottom;
+    background: url(../images/background.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     color: white;
     grid-area: intro; 
     padding-right: 150px;
