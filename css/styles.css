@@ -274,7 +274,8 @@ nav a.active {
 @media (max-width: 800px) {
     .intro {
         text-align: center;
-        align-content: center;
+        margin-left: auto;
+        margin-right: auto;
     }
     .intro h1 {
         font-size: 30px;
