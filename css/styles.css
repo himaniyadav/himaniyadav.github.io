@@ -193,6 +193,7 @@ nav a.active {
     font-family: "FontAwesome"; 
 }
 .fab {
+    font-family: FontAwesome;
     padding: 10px;
     font-size: 30px;
     width: 25px;
