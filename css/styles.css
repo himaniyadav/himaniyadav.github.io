@@ -313,7 +313,7 @@ a:hover {
         padding-left: 100px;
         padding-right: 100px;
         padding-top: 30px;
-        padding-bottom: 30px;
+        padding-bottom: 70px;
     }
 }
 @media (max-width: 600px) {
@@ -321,7 +321,7 @@ a:hover {
         padding-left: 50px;
         padding-right: 50px;
         padding-top: 30px;
-        padding-bottom: 30px;
+        padding-bottom: 70px;
     }
 }
 
